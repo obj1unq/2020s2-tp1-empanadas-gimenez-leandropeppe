@@ -1,22 +1,41 @@
 //Escribir aqui los objetos
 object galvan {
 	var sueldo = 15000
-	
+	var dinero = 0
+	var deuda = 0
 	method aumentarSueldo(monto){
 		sueldo = monto
 	}
 	method sueldoGalvan(){
 		return sueldo
 	}
+	
+	method gastar(cuanto){
+		
+	}
+	method deuda(){
+		
+	}
+	method dinero(){
+		
+	}
+	
 }
 
 object baigorria{
 	var empanadasVendidas = 0
+	var totalSueldoCobrado = 0
 	method vendio_Empanadas(empanadas){
 		empanadasVendidas += empanadas
 	}
 	method sueldoBaigorria(){
 		return empanadasVendidas * 15
+	}
+	method totalCobrado(){
+		totalSueldoCobrado += self.sueldoBaigorria()
+	}
+	method resetearEmpanadas(){
+		empanadasVendidas = 0
 	}
 	
 }
@@ -32,7 +51,8 @@ object gimenez {
 	}
 	
 	method pagarABaigorria(){
-		fondos = fondos - baigorria.sueldoBaigorria()
+		fondos = fondos - baigorria.sueldoBaigorria() 
+		baigorria.resetearEmpanadas()
 	}
 }
 
